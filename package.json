@@ -1,0 +1,27 @@
+{
+  "name": "@medv/fast-json",
+  "version": "1.0.0",
+  "description": "Extract part of JSON fastest way",
+  "main": "index.js",
+  "bin": "bin.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antonmedv/fast-json.git"
+  },
+  "keywords": [
+    "json",
+    "fast"
+  ],
+  "author": "Anton Medvedev <anton@medv.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/antonmedv/fast-json/issues"
+  },
+  "homepage": "https://github.com/antonmedv/fast-json#readme",
+  "dependencies": {
+    "ava": "^0.25.0"
+  }
+}
