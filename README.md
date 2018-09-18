@@ -34,7 +34,7 @@ const result = fastJSON('{"foo": {"bar": 1}}', ['foo', 'bar'])
 ## CLI
 
 ```bash
-npm i -g @medv/jast-json
+npm i -g @medv/fast-json
 ```
 
 ```bash
