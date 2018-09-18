@@ -14,7 +14,7 @@ Notes:
 ## Install
 
 ```bash
-npm i @medv/jast-json
+npm i @medv/fast-json
 ```
 
 ## Usage
