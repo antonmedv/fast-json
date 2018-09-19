@@ -21,7 +21,7 @@
     "url": "https://github.com/antonmedv/fast-json/issues"
   },
   "homepage": "https://github.com/antonmedv/fast-json#readme",
-  "dependencies": {
+  "devDependencies": {
     "ava": "^0.25.0"
   }
 }
