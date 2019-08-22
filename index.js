@@ -92,6 +92,16 @@ function fastJSON(input, path) {
           if (ch === '"' && input[j - 1] !== '\\') { // Make sure " doesn't escaped.
             break
           }
+           else if (ch == '"' && input[j - 1] === '\\') { // handle case with \\",\\\\"
+            let backslashCount = 1;
+            while (input[j - 1 - backslashCount] === '\\') {
+              backslashCount++;
+            }
+
+            if (backslashCount % 2 === 0) {
+              break;
+            }
+          }
         }
 
         // Check if current key is what we was looking for.

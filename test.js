@@ -105,6 +105,58 @@ test(t => {
   t.is(get(json, 'about'), json.about)
 })
 
+test(t=>{
+  const json = {foo: "\\"}
+  t.deepEqual(get(json, 'foo'), json.foo)
+})
+
+test(t=>{
+  const json = {foo: "\\\\"}
+  t.deepEqual(get(json, 'foo'), json.foo)
+})
+
+test(t=>{
+  const json = {foo: "\\\\\\"}
+  t.deepEqual(get(json, 'foo'), json.foo)
+})
+
+test(t=>{
+  const json = {foo: "\\b"}
+  t.deepEqual(get(json, 'foo'), json.foo)
+})
+
+test(t=>{
+  const json = {foo: "b\\"}
+  t.deepEqual(get(json, 'foo'), json.foo)
+})
+
+test(t=>{
+  const json = {foo: "b\\"}
+  t.deepEqual(get(json, 'foo'), json.foo)
+})
+
+test(t=>{
+  const r = fastJSON('{"foo-1": "bar"}', ['foo-1'])
+  t.is(r, 'bar')
+})
+
+test(t=>{
+  const r = fastJSON('{"foo\\"": "bar"}', ['foo\\"']) /**This is wrong lookup, it should be foo" only, may need to fix later */
+  t.is(r, 'bar')
+})
+
+test(t=>{
+  const r = fastJSON('{"foo\\\\": "bar"}', ['foo\\\\']) /**This is wrong lookup, it should be foo\\ only, may need to fix later */
+  t.is(r, 'bar')
+})
+
+test(t=>{
+  const r = fastJSON('{"\\\\": "bar"}', ['\\\\']) /**This is wrong lookup, it should be \\ only, may need to fix later */
+  t.is(r, 'bar')
+})
+
+
+
 function data() {
   return {
     "_id": "5b9cc0c64c0c3df825daf917",
